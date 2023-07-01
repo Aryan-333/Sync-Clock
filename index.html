@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sync Clock</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <link rel="stylesheet" href="index.css">
+</head>
+
+<body>
+  <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
+    <a class="navbar-brand" href="index.html"><img src="logo.png" alt="Logo"></a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+      aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav ml-auto">
+        <li class="nav-item">
+          <a class="nav-link" href="./pages/log.html">Logs</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="./pages/devices.html">Devices</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="./pages/signin.html">Sign In</a>
+        </li>
+
+      </ul>
+    </div>
+  </nav>
+
+  <div class="container">
+    <div class="row justify-content-center">
+      <div class="col-md-6">
+        <div class="text-center mt-5">
+          <h1>Sync Your Time</h1>
+        </div>
+        <div class="clock-container">
+          <div class="clock-element">
+            <h2 id="hours">00</h2>
+            <p>Hours</p>
+          </div>
+          <div class="clock-element">
+            <h2 id="minutes">00</h2>
+            <p>Minutes</p>
+          </div>
+          <div class="clock-element">
+            <h2 id="seconds">00</h2>
+            <p>Seconds</p>
+          </div>
+          <div class="clock-element">
+            <h2 id="milliseconds">000</h2>
+            <p>Milliseconds</p>
+          </div>
+        </div>
+
+        <div class="text-center mt-4">
+          <button class="btn btn-primary" id="syncNow">Sync Now</button>
+        </div>
+        <div class="text-center mt-4">
+          <label for="syncSchedule">Schedule Sync:</label>
+          <select class="form-control" id="syncSchedule">
+            <option value="-1">Select</option>
+            <option value="12">Every 12 hours</option>
+            <option value="24">Every 24 hours</option>
+            <option value="48">Every 48 hours</option>
+          </select>
+        </div>
+        <div class="text-center mt-4">
+          <label for="timeZone">Time Zone:</label>
+          <select class="form-control" id="timeZone">
+            <option value="None">Select</option>
+            <option value="GMT">GMT</option>
+            <option value="PST">PST</option>
+            <option value="EST">EST</option>
+          </select>
+        </div>
+
+        <div class="d-flex justify-content-center mt-4">
+          <div class="btn-group-toggle slider-container" data-toggle="buttons">
+            <label class="btn btn-primary slider-option active">
+              <input type="radio" name="options" id="option1" checked> 12 Hour
+            </label>
+            <label class="btn btn-primary slider-option">
+              <input type="radio" name="options" id="option2"> 24 Hour
+            </label>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- Sample Data -->
+
+    <div class="row justify-content-center mt-5">
+      <div class="col-md-8">
+        <h2>Recent Logs</h2>
+        <table class="table">
+          <thead>
+            <tr>
+              <th>Name</th>
+              <th>Sync Time</th>
+              <th>Status</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>John Doe</td>
+              <td>2023-07-01 10:30 AM</td>
+              <td>Success</td>
+            </tr>
+            <tr>
+              <td>Jane Smith</td>
+              <td>2023-07-01 09:45 AM</td>
+              <td>Failed</td>
+            </tr>
+
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+  <script src="index.js"></script>
+</body>
+
+</html>
